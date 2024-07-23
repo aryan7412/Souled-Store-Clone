@@ -1,0 +1,22 @@
+{
+  "heading": "SHOP BY OCCASIONS",
+  "sow":
+[
+    {
+      "id": 1,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/HOLIDAY_CHIC_collection_tile_2.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 2,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/OFFICE_collection_tile_2.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 3,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/DINNER_DATE_collection_tile_2_.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 4,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/SHOPPING_SPREE_collection_tile_.jpg?format=webp&w=480&dpr=2.0"
+    }
+]
+}

@@ -1,0 +1,39 @@
+
+[
+    {
+      "id": 1,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/webpage_.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "id": 2,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/OS_homepage_banner_copy.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "id": 3,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/homepage_banner_copy_FoCk3YA.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "id": 4,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/homepage-banner_5_MnilImX.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "id": 5,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/homepage_banner_copy_2_dN8S3HR.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "id": 6,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/co-ord_sets_all_new_now_live_homepage.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+      "id": 7,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/home_banner_UBZ_Denim_women.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+        "id": 8,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/Homepage-BannerZ.jpg?format=webp&w=1500&dpr=2.0"
+    },
+    {
+        "id": 9,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/home_banner_.jpg?format=webp&w=1500&dpr=2.0"
+    }
+  ]

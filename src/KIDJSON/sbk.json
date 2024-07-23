@@ -1,0 +1,17 @@
+{
+  "heading": "SHOP BY AGE",
+  "sbk":[
+    {
+      "id": 1,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/1_copy_wGGVdTY.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 2,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/2_copy_7IIpPax.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 3,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/3_copy.jpg?format=webp&w=480&dpr=2.0"
+    }
+  ]
+}

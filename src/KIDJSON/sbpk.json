@@ -1,0 +1,21 @@
+{
+  "heading": "SHOP BY PRICE",
+  "sbpk":[
+    {
+      "id": 1,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/price-new_01.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 2,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/price-new_02_7DFXoqe.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 3,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/price-new_03_3P6JLGz.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 4,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/price-new_04_8RP2MFi.jpg?format=webp&w=480&dpr=2.0"
+    }
+  ]
+}

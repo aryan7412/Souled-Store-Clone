@@ -1,0 +1,48 @@
+{
+  "heading": "NEW ARRIVALS",
+  "nak":
+    [
+        {
+          "id": 1,
+          "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/new-arrivals-0.jpg?format=webp&w=360&dpr=2.0",
+          "subtitle": "Elegant Wooden Chair",
+          "type": "Furniture",
+          "price": 49.99
+        },
+        {
+          "id": 2,
+          "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/new-arrivals-0000.jpg?format=webp&w=360&dpr=2.0",
+          "subtitle": "Stainless Steel Cutlery Set",
+          "type": "Kitchenware",
+          "price": 24.99
+        },
+        {
+          "id": 3,
+          "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/New-Arrivals-kids.jpg?format=webp&w=360&dpr=2.0",
+          "subtitle": "Modern Table Lamp",
+          "type": "Lighting",
+          "price": 39.99
+        },
+        {
+          "id": 4,
+          "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/new-arrivals-000.jpg?format=webp&w=360&dpr=2.0",
+          "subtitle": "Ceramic Vase",
+          "type": "Decor",
+          "price": 29.99
+        },
+        {
+          "id": 5,
+          "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/newarrival2.jpg?format=webp&w=360&dpr=2.0",
+          "subtitle": "Bluetooth Speaker",
+          "type": "Electronics",
+          "price": 79.99
+        },
+        {
+          "id": 6,
+          "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/newarrival1.jpg?format=webp&w=360&dpr=2.0",
+          "subtitle": "Cotton Bath Towels",
+          "type": "Linens",
+          "price": 19.99
+        }
+  ]
+}

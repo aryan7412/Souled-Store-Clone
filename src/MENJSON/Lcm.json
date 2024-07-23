@@ -1,0 +1,42 @@
+{
+  "heading": "LATEST COLLECTIONS",
+  "Lcm":
+  [
+      {
+        "id": 1,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/collection-tile_3_gu6yXuD.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 2,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/collection-tile_2.png?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 3,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Collection-tile_5_YuYC058.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 4,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Collection_Tile_.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 5,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/collection-tile_4.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 6,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Collection_tile_copy.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 7,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Collection-tile___copy.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 8,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Collection_tile_all_new_T_2.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 9,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/BEST_SELLERS._collection_tile.jpg?format=webp&w=480&dpr=2.0"
+      }
+    ]
+  }
