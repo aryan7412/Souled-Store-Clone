@@ -1,29 +1,17 @@
 import React, { useState } from "react";
 import LoginModal from "./LoginModal";
-import ProductPage from "./ProductPage"; // Import ProductPage
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faTimes,
-  faSearch,
-  faUser,
-  faHeart,
-  faShoppingCart,
-} from "@fortawesome/free-solid-svg-icons";
+import ProductPage from "./ProductPage";
 
 const Navbar = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-  const [isProductPageOpen, setIsProductPageOpen] = useState(false); // State for ProductPage
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isProductPageOpen, setIsProductPageOpen] = useState(false);
   const toggleLoginModal = () => {
     setIsLoginModalOpen(!isLoginModalOpen);
   };
-
   const toggleProductPage = () => {
     setIsProductPageOpen(!isProductPageOpen);
   };
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -40,15 +28,15 @@ const Navbar = () => {
               </div>
               {/* Desktop Navigation */}
               <nav className="hidden md:flex space-x-4 ml-12">
-                <a href="#" onClick={toggleProductPage} className="hover:text-gray-300">
+                <a href="#" className="hover:text-gray-300">
                   WOMEN
                 </a>
                 <span>|</span>
-                <a href="#" onClick={toggleProductPage} className="hover:text-gray-300">
+                <a href="#" className="hover:text-gray-300">
                   MEN
                 </a>
                 <span>|</span>
-                <a href="#" onClick={toggleProductPage} className="hover:text-gray-300">
+                <a href="#" className="hover:text-gray-300">
                   KIDS
                 </a>
               </nav>
@@ -60,7 +48,11 @@ const Navbar = () => {
                 onClick={toggleMenu}
                 aria-label="Toggle Navigation"
               >
-                <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
+                {isMenuOpen ? (
+                  <span className="text-2xl">&times;</span>
+                ) : (
+                  <span className="text-2xl">&#9776;</span>
+                )}
               </button>
               <div className="hidden md:flex space-x-4">
                 <a href="#" className="hover:text-gray-300">
@@ -77,12 +69,16 @@ const Navbar = () => {
           </div>
         </div>
         <div
-          className={`bg-white text-gray-700 w-full ${isMenuOpen ? "block" : "hidden"} md:block`}
+          className={`bg-white text-gray-700 w-full ${
+            isMenuOpen ? "block" : "hidden"
+          } md:block`}
         >
           <div className="container mx-auto py-6 px-4">
             {/* Mobile Menu */}
             <div
-              className={`flex flex-col md:flex-row ${isMenuOpen ? "block" : "hidden"} md:flex`}
+              className={`flex flex-col md:flex-row ${
+                isMenuOpen ? "block" : "hidden"
+              } md:flex`}
             >
               <nav className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 text-sm font-semibold">
                 <a href="#" className="hover:text-gray-500 relative">
@@ -169,24 +165,24 @@ const Navbar = () => {
               </nav>
               <div className="flex space-x-4 mt-4 md:mt-0 ml-auto">
                 <button className="hover:text-gray-500" aria-label="Search">
-                  <FontAwesomeIcon icon={faSearch} />
+                  🔍
                 </button>
                 <button
                   className="hover:text-gray-500"
                   onClick={toggleLoginModal}
                   aria-label="User Account"
                 >
-                  <FontAwesomeIcon icon={faUser} />
+                  👤
                 </button>
                 <button className="hover:text-gray-500" aria-label="Favorites">
-                  <FontAwesomeIcon icon={faHeart} />
+                  ❤️
                 </button>
                 <button
                   className="hover:text-gray-500"
                   onClick={toggleProductPage}
                   aria-label="Shopping Cart"
                 >
-                  <FontAwesomeIcon icon={faShoppingCart} />
+                  🛒
                 </button>
               </div>
             </div>
