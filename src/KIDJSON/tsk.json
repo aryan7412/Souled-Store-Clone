@@ -1,0 +1,41 @@
+{
+  "heading": "TOP SELLING",
+  "tsk":
+[
+    {
+      "id": 1,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/24_5.jpg?format=webp&w=360&dpr=2.0",
+      "subtitle": "Elegant Wooden Chair",
+      "type": "Furniture",
+      "price": 49.99
+    },
+    {
+      "id": 2,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/top_selling_peppa-sunshine-girls-cotton-full-sleeves-t-shirts.jpg?format=webp&w=360&dpr=2.0",
+      "subtitle": "Stainless Steel Cutlery Set",
+      "type": "Kitchenware",
+      "price": 24.99
+    },
+    {
+      "id": 3,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/top_selling_batman-in-action-boys-cotton-full-sleeve-t-shirts_1.jpg?format=webp&w=360&dpr=2.0",
+      "subtitle": "Modern Table Lamp",
+      "type": "Lighting",
+      "price": 39.99
+    },
+    {
+      "id": 4,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/top_selling_iron-man-arc-reactor-boys-t-shirt_1.jpg?format=webp&w=360&dpr=2.0",
+      "subtitle": "Ceramic Vase",
+      "type": "Decor",
+      "price": 29.99
+    },
+    {
+      "id": 5,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/top_selling_powerpuff-girls-girl-power-bubbles-girls-combo-set_1.jpg?format=webp&w=360&dpr=2.0",
+      "subtitle": "Bluetooth Speaker",
+      "type": "Electronics",
+      "price": 79.99
+    }
+]
+}

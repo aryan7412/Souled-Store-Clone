@@ -1,0 +1,27 @@
+{
+  "heading": "BEST SELLERS",
+  "bsm":
+  [
+      {
+        "id": 1,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/best-selling_01_1_YVGZzMd.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 2,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/best-selling_02_1_EDbeYTf.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 3,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/best-selling_03_1_NgYQGH4.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 4,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/best-selling_04_1_eNvoVZd.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 5,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/best-selling_05_1_upifSxN.jpg?format=webp&w=480&dpr=2.0"
+      }
+    ]
+  }
+  

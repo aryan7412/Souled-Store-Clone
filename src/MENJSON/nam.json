@@ -1,0 +1,147 @@
+{
+  "heading": "NEW ARRIVALS",
+  "nam":
+[
+      {
+        "id": 1,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721488114_8753985.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Elegant Wooden Chair",
+        "type": "Furniture",
+        "price": 49.99
+      },
+      {
+        "id": 2,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721489456_5698833.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Stainless Steel Cutlery Set",
+        "type": "Kitchenware",
+        "price": 24.99
+      },
+      {
+        "id": 3,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721385167_7843915.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Modern Table Lamp",
+        "type": "Lighting",
+        "price": 39.99
+      },
+      {
+        "id": 4,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721491472_3925966.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Ceramic Vase",
+        "type": "Decor",
+        "price": 29.99
+      },
+      {
+        "id": 5,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721472947_7136689.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Bluetooth Speaker",
+        "type": "Electronics",
+        "price": 79.99
+      },
+      {
+        "id": 6,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721492617_3553899.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Cotton Bath Towels",
+        "type": "Linens",
+        "price": 19.99
+      },
+      {
+        "id": 7,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721475483_2468025.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Non-stick Frying Pan",
+        "type": "Cookware",
+        "price": 34.99
+      },
+      {
+        "id": 8,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721492346_6600439.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Leather Wallet",
+        "type": "Accessories",
+        "price": 44.99
+      },
+      {
+        "id": 9,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721491870_5272881.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Woolen Scarf",
+        "type": "Apparel",
+        "price": 24.99
+      },
+      {
+        "id": 10,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721486149_4608981.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Scented Candles",
+        "type": "Decor",
+        "price": 14.99
+      },
+      {
+        "id": 11,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721383562_3374555.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Wireless Mouse",
+        "type": "Electronics",
+        "price": 25.99
+      },
+      {
+        "id": 12,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721391043_2396313.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Yoga Mat",
+        "type": "Fitness",
+        "price": 29.99
+      },
+      {
+        "id": 13,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721391119_3163232.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Portable Charger",
+        "type": "Electronics",
+        "price": 39.99
+      },
+      {
+        "id": 14,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721412725_3410422.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Organic Green Tea",
+        "type": "Beverages",
+        "price": 9.99
+      },
+      {
+        "id": 15,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721374700_3880017.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Digital Watch",
+        "type": "Accessories",
+        "price": 59.99
+      },
+      {
+        "id": 16,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721389372_8410646.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Bamboo Cutting Board",
+        "type": "Kitchenware",
+        "price": 19.99
+      },
+      {
+        "id": 17,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721385487_9415255.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Running Shoes",
+        "type": "Footwear",
+        "price": 89.99
+      },
+      {
+        "id": 18,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721412353_1156309.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Silk Pillowcase",
+        "type": "Linens",
+        "price": 29.99
+      },
+      {
+        "id": 19,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721382977_8046513.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Herbal Shampoo",
+        "type": "Personal Care",
+        "price": 14.99
+      },
+      {
+        "id": 20,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1721411994_6929254.jpg?format=webp&w=360&dpr=2.0",
+        "subtitle": "Electric Toothbrush",
+        "type": "Electronics",
+        "price": 49.99
+      }
+    ]
+
+  }

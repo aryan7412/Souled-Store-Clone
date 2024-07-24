@@ -1,0 +1,34 @@
+{
+  "heading": "LATEST COLLECTIONS",
+  "lck":
+[
+    {
+      "id": 1,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/kids-collection-tile.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 2,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Untitled-1_SM5hTdZ.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 3,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/PPG_Collection_Tile_copy.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 4,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Girls_Summer_Dresses_Collection_Tile_1.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+        "id": 5,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/collection-tile_pgJikIo.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 6,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Kids_Bottoms_Collection_Tile_knR4Ik5.jpg?format=webp&w=480&dpr=2.0"
+      },
+      {
+        "id": 7,
+        "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/Collection-tile_1_yJ0Gj0w.jpg?format=webp&w=480&dpr=2.0"
+      }
+  ]
+}

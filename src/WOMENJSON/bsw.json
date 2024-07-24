@@ -1,0 +1,22 @@
+{
+  "heading": "MOST LOVED PRODUCT",
+  "bsw":
+[
+    {
+      "id": 1,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/most-loved-tile-parachute-pants_01_1_jk8Kgas.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 2,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/most-loved-tile-parachute-pants_02_eqQgDJh.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 3,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/most-loved-tile-parachute-pants_03_1AWQi42.jpg?format=webp&w=480&dpr=2.0"
+    },
+    {
+      "id": 4,
+      "image": "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/product-images/most-loved-tile-parachute-pants_04_QXtNEmF.jpg?format=webp&w=480&dpr=2.0"
+    }
+]
+}
