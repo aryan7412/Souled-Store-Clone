@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import LoginModal from "./LoginModal";
+import ProductPage from "./ProductPage"; // Import ProductPage
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -12,10 +13,15 @@ import {
 
 const Navbar = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isProductPageOpen, setIsProductPageOpen] = useState(false); // State for ProductPage
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleLoginModal = () => {
     setIsLoginModalOpen(!isLoginModalOpen);
+  };
+
+  const toggleProductPage = () => {
+    setIsProductPageOpen(!isProductPageOpen);
   };
 
   const toggleMenu = () => {
@@ -34,15 +40,15 @@ const Navbar = () => {
               </div>
               {/* Desktop Navigation */}
               <nav className="hidden md:flex space-x-4 ml-12">
-                <a href="#" className="hover:text-gray-300">
+                <a href="#" onClick={toggleProductPage} className="hover:text-gray-300">
                   WOMEN
                 </a>
                 <span>|</span>
-                <a href="#" className="hover:text-gray-300">
+                <a href="#" onClick={toggleProductPage} className="hover:text-gray-300">
                   MEN
                 </a>
                 <span>|</span>
-                <a href="#" className="hover:text-gray-300">
+                <a href="#" onClick={toggleProductPage} className="hover:text-gray-300">
                   KIDS
                 </a>
               </nav>
@@ -177,6 +183,7 @@ const Navbar = () => {
                 </button>
                 <button
                   className="hover:text-gray-500"
+                  onClick={toggleProductPage}
                   aria-label="Shopping Cart"
                 >
                   <FontAwesomeIcon icon={faShoppingCart} />
@@ -187,6 +194,7 @@ const Navbar = () => {
         </div>
       </header>
       {isLoginModalOpen && <LoginModal toggleLoginModal={toggleLoginModal} />}
+      {isProductPageOpen && <ProductPage toggleProductPage={toggleProductPage} />}
     </>
   );
 };
