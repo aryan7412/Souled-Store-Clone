@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar1 from './Navbar1';
+// import Navbar1 from './Navbar1';
 import Bestsellers from './Bestsellers';
 import Latestcollection from './Latestcollection';
 import Shopbyfandom from './Shopbyfandom';
