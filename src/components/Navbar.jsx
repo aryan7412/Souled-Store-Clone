@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LoginModal from "./LoginModal";
 import ProductPage from "./ProductPage";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -28,17 +29,11 @@ const Navbar = () => {
               </div>
               {/* Desktop Navigation */}
               <nav className="hidden md:flex space-x-4 ml-12">
-                <a href="#" className="hover:text-gray-300">
-                  WOMEN
-                </a>
+                <Link to="/Womens" className="hover:text-gray-300">WOMENS</Link>
                 <span>|</span>
-                <a href="#" className="hover:text-gray-300">
-                  MEN
-                </a>
+                <Link to="/Mens" className="hover:text-gray-300">MENS</Link>
                 <span>|</span>
-                <a href="#" className="hover:text-gray-300">
-                  KIDS
-                </a>
+                <Link to="/Kids" className="hover:text-gray-300">KIDS</Link>
               </nav>
             </div>
             {/* Hamburger Icon */}

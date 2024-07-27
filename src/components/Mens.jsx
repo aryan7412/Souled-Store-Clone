@@ -1,5 +1,5 @@
 import React from 'react';
-// import Navbar1 from './Navbar1';
+import Navbar from './Navbar'
 import Bestsellers from './Bestsellers';
 import Latestcollection from './Latestcollection';
 import Shopbyfandom from './Shopbyfandom';
@@ -8,7 +8,7 @@ import Membership from './Membership';
 import Allnewbottom from './Allnewbottom';
 import Newarivals from './Newarivals';
 import Carousel from './Carousel';
-// import Footer from './Footer';
+import Footer from './Footer';
 import products from '../MENJSON/allm.json';
 import productsa from '../MENJSON/nam.json';
 import car from '../MENJSON/carm.json';
@@ -20,7 +20,7 @@ import sbfm from '../MENJSON/sbfm.json';
 function Mens() {
   return (
     <>
-    {/* <Navbar1 /> */}
+    <Navbar />
     <Carousel car = {car} />
     <Bestsellers heading = {bs.heading} bs = {bs.bsm} />
     <Allnewbottom heading={products.heading} products = {products.allm} />
@@ -29,7 +29,7 @@ function Mens() {
     <CategoriesM />
     <Shopbyfandom heading={sbfm.heading} sbfm={sbfm.sbfm}/>
     <Membership />
-    {/* <Footer /> */}
+    <Footer/>
     </>
   );
 }
