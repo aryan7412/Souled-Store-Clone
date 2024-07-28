@@ -1,19 +1,34 @@
 import React, { useState } from "react";
 import LoginModal from "./LoginModal";
 import ProductPage from "./ProductPage";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductPageOpen, setIsProductPageOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
   const toggleLoginModal = () => {
     setIsLoginModalOpen(!isLoginModalOpen);
   };
+
   const toggleProductPage = () => {
     setIsProductPageOpen(!isProductPageOpen);
   };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    // Implement search functionality here, for now, just log the query
+    console.log("Search query:", searchQuery);
   };
 
   return (
@@ -28,17 +43,11 @@ const Navbar = () => {
               </div>
               {/* Desktop Navigation */}
               <nav className="hidden md:flex space-x-4 ml-12">
-                <a href="#" className="hover:text-gray-300">
-                  WOMEN
-                </a>
+                <Link to="/Womens" className="hover:text-gray-300">WOMENS</Link>
                 <span>|</span>
-                <a href="#" className="hover:text-gray-300">
-                  MEN
-                </a>
+                <Link to="/Mens" className="hover:text-gray-300">MENS</Link>
                 <span>|</span>
-                <a href="#" className="hover:text-gray-300">
-                  KIDS
-                </a>
+                <Link to="/Kids" className="hover:text-gray-300">KIDS</Link>
               </nav>
             </div>
             {/* Hamburger Icon */}
@@ -164,9 +173,21 @@ const Navbar = () => {
                 </a>
               </nav>
               <div className="flex space-x-4 mt-4 md:mt-0 ml-auto">
-                <button className="hover:text-gray-500" aria-label="Search">
-                  🔍
-                </button>
+                <form onSubmit={handleSearchSubmit} className="relative group">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    placeholder="Search..."
+                    className="border rounded-full py-1 px-3 transition-width duration-300 ease-in-out group-hover:w-48 w-32 focus:w-48"
+                  />
+                  <button
+                    type="submit"
+                    className="absolute right-0 top-0 mt-1 mr-1 text-gray-500 group-hover:text-gray-700"
+                  >
+                    🔍
+                  </button>
+                </form>
                 <button
                   className="hover:text-gray-500"
                   onClick={toggleLoginModal}

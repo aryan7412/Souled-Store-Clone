@@ -1,48 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const LoginModals = ({ toggleLoginModals }) => {
+const LoginModals = () => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
+
+  if (!isOpen) return null;
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
-        {/* Close Button */}
-        <button
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 focus:outline-none"
-          onClick={toggleLoginModals}
-          aria-label="Close"
+    <div className="flex justify-center items-center h-screen bg-gray-100">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
+        <button 
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+          onClick={() => setIsOpen(false)}
         >
-          ✖
+          &times;
         </button>
-
-        {/* Modal Content */}
         <div className="flex justify-center mb-4">
-          <button className="text-lg font-semibold text-green-700 border-b-2 border-green-700 px-4 py-1 focus:outline-none">LOGIN</button>
-          <button className="text-lg font-semibold text-gray-500 px-4 py-1 focus:outline-none">REGISTER</button>
+          <button 
+            className={`w-1/2 py-2 ${isLogin ? 'bg-teal-600 text-white' : 'bg-gray-200'}`} 
+            onClick={() => setIsLogin(true)}
+          >
+            LOGIN
+          </button>
+          <button 
+            className={`w-1/2 py-2 ${!isLogin ? 'bg-teal-600 text-white' : 'bg-gray-200'}`} 
+            onClick={() => setIsLogin(false)}
+          >
+            REGISTER
+          </button>
         </div>
-        <div className="text-center">
-          <button className="flex items-center justify-center w-full py-2 mb-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none">
-            <span className="mr-2">🔵</span> Facebook
+        <div className="flex justify-between mb-4">
+          <button className="flex-1 bg-blue-600 text-white py-2 mr-2 rounded-lg">
+            Facebook
           </button>
-          <button className="flex items-center justify-center w-full py-2 mb-4 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none">
-            <span className="mr-2">🔴</span> Google
+          <button className="flex-1 bg-red-600 text-white py-2 ml-2 rounded-lg">
+            Google
           </button>
-          <div className="relative mb-4">
-            <hr className="border-t border-gray-300" />
-            <span className="absolute inset-x-0 top-0 mx-auto w-max -mt-2 bg-white px-2 text-gray-500">- OR -</span>
-          </div>
-          <input
-            type="text"
-            placeholder="Enter Phone Number"
-            className="w-full p-3 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-700"
+        </div>
+        <div className="text-center mb-4">- OR -</div>
+        <div className="mb-4">
+          <input 
+            type="text" 
+            className="w-full p-2 border rounded-lg" 
+            placeholder="Enter Phone Number" 
           />
-          <button className="w-full py-3 mb-4 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none">PROCEED</button>
-          <div>
-            <span className="text-gray-500">New User?</span>
-            <a href="#" className="ml-1 text-red-600">Create Account</a>
-          </div>
+        </div>
+        <button className="w-full bg-red-500 text-white py-2 rounded-lg">PROCEED</button>
+        <div className="text-center mt-4">
+          New User? <a href="#" className="text-teal-600">Create Account</a>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default LoginModals;
