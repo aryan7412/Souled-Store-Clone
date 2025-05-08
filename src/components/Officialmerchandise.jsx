@@ -52,13 +52,13 @@ function Officialmerchandise({heading,om}) {
     <h3 className='text-center font-extrabold text-2xl pb-6 pt-6'>{heading}</h3>
       <div className="slider-container">
       <Slider {...settings}>
-      {om.map((om)=>(
-        <div>
-          <div className='px-2'>
-            <img src={om.image} />    
-          </div>
-          </div>
-          ))}
+      {om.map((om, index) => (
+        <div key={`official-${index}`} className="product-card">
+          <img src={om.image} alt={om.name} />
+          <h3>{om.name}</h3>
+          <p>₹{om.price}</p>
+        </div>
+      ))}
       </Slider>
       </div>
     </div>

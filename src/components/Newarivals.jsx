@@ -45,8 +45,8 @@ function Newarivals({heading,productsa}) {
         <div className="slider-container">
         <Slider {...settings}>
             
-            {productsa.map((product)=>(
-                <div className=' pb-10 pt-4 grid grid-cols-4'>
+            {productsa.map((product, index) => (
+                <div key={`newarrival-${index}`} className=' pb-10 pt-4 grid grid-cols-4'>
                         <div className='mx-3'>
                             <img className='rounded-lg' src={product.image} />
                             <p className='font-bold text-gray-700 font-sans text-sm'>{product.subtitle}</p>

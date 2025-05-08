@@ -1,20 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import LoginModal from "./LoginModal";
-import ProductPage from "./ProductPage";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProductPageOpen, setIsProductPageOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [cartCount, setCartCount] = useState(0);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [notifications, setNotifications] = useState([
+    { id: 1, message: "New collection launched!", time: "2 hours ago" },
+    { id: 2, message: "Your order has been delivered", time: "1 day ago" }
+  ]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Get current user from localStorage
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    setCurrentUser(user);
+
+    // Update cart count from localStorage
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+      setCartCount(totalItems);
+    };
+
+    // Initial update
+    updateCartCount();
+
+    // Listen for storage events
+    window.addEventListener('storage', updateCartCount);
+    window.addEventListener('cartUpdated', updateCartCount);
+
+    return () => {
+      window.removeEventListener('storage', updateCartCount);
+      window.removeEventListener('cartUpdated', updateCartCount);
+    };
+  }, []);
 
   const toggleLoginModal = () => {
-    setIsLoginModalOpen(!isLoginModalOpen);
-  };
-
-  const toggleProductPage = () => {
-    setIsProductPageOpen(!isProductPageOpen);
+    setShowLoginModal(!showLoginModal);
   };
 
   const toggleMenu = () => {
@@ -27,30 +54,70 @@ const Navbar = () => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    // Implement search functionality here, for now, just log the query
+    // Implement search functionality
     console.log("Search query:", searchQuery);
+  };
+
+  const handleCartClick = () => {
+    if (!currentUser) {
+      setShowLoginModal(true);
+      return;
+    }
+    navigate('/payment');
+  };
+
+  const handleProfileClick = () => {
+    if (!currentUser) {
+      setShowLoginModal(true);
+      return;
+    }
+    navigate('/profile');
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('currentUser');
+    setCurrentUser(null);
+    navigate('/');
+  };
+
+  const categories = {
+    'WOMENS': ['T-Shirts', 'Hoodies', 'Sweatshirts', 'Tops', 'Dresses'],
+    'MENS': ['T-Shirts', 'Hoodies', 'Sweatshirts', 'Shirts', 'Pants'],
+    'KIDS': ['T-Shirts', 'Hoodies', 'Sweatshirts', 'Tops', 'Dresses']
   };
 
   return (
     <>
       <header className="sticky top-0 z-50">
+        {/* Top Bar */}
         <div className="bg-red-600 text-white w-full">
           <div className="container mx-auto flex justify-between items-center py-2 px-4">
             <div className="flex items-center space-x-8">
-              <div className="text-white text-2xl font-bold flex items-center">
+              <Link to="/" className="text-white text-2xl font-bold flex items-center">
                 <span className="mr-2">👻</span>
                 <span>The Souled Store</span>
-              </div>
-              {/* Desktop Navigation */}
+              </Link>
               <nav className="hidden md:flex space-x-4 ml-12">
-                <Link to="/Womens" className="hover:text-gray-300">WOMENS</Link>
-                <span>|</span>
-                <Link to="/Mens" className="hover:text-gray-300">MENS</Link>
-                <span>|</span>
-                <Link to="/Kids" className="hover:text-gray-300">KIDS</Link>
+                {Object.keys(categories).map(category => (
+                  <div key={category} className="relative group">
+                    <Link to={`/${category.toLowerCase()}`} className="hover:text-gray-300">
+                      {category}
+                    </Link>
+                    <div className="absolute hidden group-hover:block bg-white shadow-lg z-10 min-w-[200px] py-2">
+                      {categories[category].map(subCategory => (
+                        <Link
+                          key={subCategory}
+                          to={`/${category.toLowerCase()}/${subCategory.toLowerCase()}`}
+                          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        >
+                          {subCategory}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </nav>
             </div>
-            {/* Hamburger Icon */}
             <div className="flex items-center space-x-4">
               <button
                 className="md:hidden text-white"
@@ -64,12 +131,12 @@ const Navbar = () => {
                 )}
               </button>
               <div className="hidden md:flex space-x-4">
-                <a href="#" className="hover:text-gray-300">
+                <Link to="/track-order" className="hover:text-gray-300">
                   TRACK ORDER
-                </a>
-                <a href="#" className="hover:text-gray-300">
+                </Link>
+                <Link to="/contact" className="hover:text-gray-300">
                   CONTACT US
-                </a>
+                </Link>
                 <a href="#" className="hover:text-gray-300">
                   DOWNLOAD APP
                 </a>
@@ -77,141 +144,176 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div
-          className={`bg-white text-gray-700 w-full ${
-            isMenuOpen ? "block" : "hidden"
-          } md:block`}
-        >
-          <div className="container mx-auto py-6 px-4">
-            {/* Mobile Menu */}
-            <div
-              className={`flex flex-col md:flex-row ${
-                isMenuOpen ? "block" : "hidden"
-              } md:flex`}
-            >
-              <nav className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 text-sm font-semibold">
-                <a href="#" className="hover:text-gray-500 relative">
-                  ALL LINENS
-                  <span
-                    className="absolute top-[-8px] right-[-8px] text-xs text-red-600 bg-transparent px-1"
-                    style={{ fontSize: "10px" }}
-                  >
-                    NEW
-                  </span>
-                </a>
-                <div className="relative group">
-                  <button className="hover:text-gray-500">TOPWEAR</button>
-                  <div className="absolute hidden group-hover:block bg-white shadow-lg z-10">
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
-                    >
-                      Option 1
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
-                    >
-                      Option 2
-                    </a>
-                  </div>
-                </div>
-                <div className="relative group">
-                  <button className="hover:text-gray-500">BOTTOMWEAR</button>
-                  <div className="absolute hidden group-hover:block bg-white shadow-lg z-10">
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
-                    >
-                      Option 1
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
-                    >
-                      Option 2
-                    </a>
-                  </div>
-                </div>
-                <a href="#" className="hover:text-gray-500 relative">
-                  BESTSELLERS
-                  <span
-                    className="absolute top-[-8px] right-[-8px] text-xs text-red-600 bg-transparent px-1"
-                    style={{ fontSize: "10px" }}
-                  >
-                    NEW
-                  </span>
-                </a>
-                <a href="#" className="hover:text-gray-500 relative">
-                  SNEAKERS
-                  <span
-                    className="absolute top-[-8px] right-[-8px] text-xs text-red-600 bg-transparent px-1"
-                    style={{ fontSize: "10px" }}
-                  >
-                    NEW
-                  </span>
-                </a>
-                <div className="relative group">
-                  <button className="hover:text-gray-500">COLLECTIONS</button>
-                  <div className="absolute hidden group-hover:block bg-white shadow-lg z-10">
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
-                    >
-                      Option 1
-                    </a>
-                    <a
-                      href="#"
-                      className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
-                    >
-                      Option 2
-                    </a>
-                  </div>
-                </div>
-                <a href="#" className="hover:text-gray-500">
-                  ACCESSORIES
-                </a>
-              </nav>
-              <div className="flex space-x-4 mt-4 md:mt-0 ml-auto">
-                <form onSubmit={handleSearchSubmit} className="relative group">
+
+        {/* Search Bar */}
+        <div className="bg-white border-b">
+          <div className="container mx-auto py-4 px-4">
+            <div className="flex items-center justify-between">
+              <form onSubmit={handleSearchSubmit} className="flex-1 max-w-2xl">
+                <div className="relative">
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={handleSearchChange}
-                    placeholder="Search..."
-                    className="border rounded-full py-1 px-3 transition-width duration-300 ease-in-out group-hover:w-48 w-32 focus:w-48"
+                    placeholder="Search for products..."
+                    className="w-full px-4 py-2 border rounded-full focus:outline-none focus:border-red-500"
                   />
                   <button
                     type="submit"
-                    className="absolute right-0 top-0 mt-1 mr-1 text-gray-500 group-hover:text-gray-700"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-red-500"
                   >
                     🔍
                   </button>
-                </form>
+                </div>
+              </form>
+
+              <div className="flex items-center space-x-6 ml-8">
+                {currentUser ? (
+                  <div className="relative group">
+                    <button
+                      className="flex items-center space-x-2 hover:text-red-500"
+                      onClick={handleProfileClick}
+                    >
+                      <span>👤</span>
+                      <span className="hidden md:inline">{currentUser.name}</span>
+                    </button>
+                    <div className="absolute hidden group-hover:block bg-white shadow-lg z-10 min-w-[200px] py-2 right-0">
+                      <Link
+                        to="/profile"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                      >
+                        My Profile
+                      </Link>
+                      <Link
+                        to="/orders"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                      >
+                        My Orders
+                      </Link>
+                      <Link
+                        to="/wishlist"
+                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                      >
+                        Wishlist
+                      </Link>
+                      <button
+                        onClick={handleLogout}
+                        className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <button
+                    className="hover:text-red-500"
+                    onClick={toggleLoginModal}
+                  >
+                    👤
+                  </button>
+                )}
+
+                <div className="relative group">
+                  <button
+                    className="hover:text-red-500 relative"
+                    onClick={() => setShowNotifications(!showNotifications)}
+                  >
+                    🔔
+                    {notifications.length > 0 && (
+                      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                        {notifications.length}
+                      </span>
+                    )}
+                  </button>
+                  {showNotifications && (
+                    <div className="absolute right-0 mt-2 bg-white shadow-lg z-10 min-w-[300px] py-2">
+                      {notifications.map(notification => (
+                        <div
+                          key={notification.id}
+                          className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                        >
+                          <p className="text-gray-700">{notification.message}</p>
+                          <p className="text-sm text-gray-500">{notification.time}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
                 <button
-                  className="hover:text-gray-500"
-                  onClick={toggleLoginModal}
-                  aria-label="User Account"
-                >
-                  👤
-                </button>
-                <button className="hover:text-gray-500" aria-label="Favorites">
-                  ❤️
-                </button>
-                <button
-                  className="hover:text-gray-500"
-                  onClick={toggleProductPage}
-                  aria-label="Shopping Cart"
+                  className="hover:text-red-500 relative"
+                  onClick={handleCartClick}
                 >
                   🛒
+                  {cartCount > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                      {cartCount}
+                    </span>
+                  )}
                 </button>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden bg-white border-b">
+            <div className="container mx-auto py-4 px-4">
+              <nav className="flex flex-col space-y-4">
+                {Object.keys(categories).map(category => (
+                  <div key={category}>
+                    <Link
+                      to={`/${category.toLowerCase()}`}
+                      className="block font-semibold text-gray-700 hover:text-red-500"
+                    >
+                      {category}
+                    </Link>
+                    <div className="pl-4 mt-2 space-y-2">
+                      {categories[category].map(subCategory => (
+                        <Link
+                          key={subCategory}
+                          to={`/${category.toLowerCase()}/${subCategory.toLowerCase()}`}
+                          className="block text-gray-600 hover:text-red-500"
+                        >
+                          {subCategory}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+                <Link
+                  to="/track-order"
+                  className="block font-semibold text-gray-700 hover:text-red-500"
+                >
+                  TRACK ORDER
+                </Link>
+                <Link
+                  to="/contact"
+                  className="block font-semibold text-gray-700 hover:text-red-500"
+                >
+                  CONTACT US
+                </Link>
+                <a
+                  href="#"
+                  className="block font-semibold text-gray-700 hover:text-red-500"
+                >
+                  DOWNLOAD APP
+                </a>
+              </nav>
+            </div>
+          </div>
+        )}
       </header>
-      {isLoginModalOpen && <LoginModal toggleLoginModal={toggleLoginModal} />}
-      {isProductPageOpen && <ProductPage toggleProductPage={toggleProductPage} />}
+      {showLoginModal && (
+        <LoginModal
+          onClose={toggleLoginModal}
+          onLoginSuccess={(user) => {
+            setCurrentUser(user);
+            setShowLoginModal(false);
+          }}
+        />
+      )}
     </>
   );
 };

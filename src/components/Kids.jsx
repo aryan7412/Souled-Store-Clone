@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './Navbar'
 import Bestsellers from './Bestsellers';
 import Latestcollection from './Latestcollection';
 import Officialmerchandise from './Officialmerchandise';
@@ -9,7 +8,6 @@ import Membership from './Membership';
 import Allnewbottom from './Allnewbottom';
 import Newarivals from './Newarivals';
 import Carousel from './Carousel';
-import Footer from './Footer';
 import cark from '../KIDJSON/cark.json';
 import sbk from '../KIDJSON/sbk.json';
 import lck from '../KIDJSON/lck.json';
@@ -21,20 +19,18 @@ import Catek from '../KIDJSON/Catek.json';
 
 function Kids() {
   return (
-    <>
-    <Navbar />
-    <Carousel car = {cark} />
-    <Bestsellers heading={sbk.heading} bs = {sbk.sbk} />
-    <Latestcollection heading={lck.heading} ls = {lck.lck} />
-    <Officialmerchandise heading={om.heading} om ={om.om} />
-    <Latestcollection heading={sbpk.heading} ls = {sbpk.sbpk} />
-    <CategoriesK heading={Catek.heading} Catek={Catek.Catek} />
-    <Newarivals heading={tsk.heading} productsa = {tsk.tsk} />
-    <Newarivals heading={nak.heading} productsa = {nak.nak} />
-    <Membership />
-    <Footer />
-    </>
+    <div className="w-full">
+      <Carousel car={cark} />
+      <Bestsellers heading={sbk.heading} bs={sbk.sbk} />
+      <Latestcollection heading={lck.heading} ls={lck.lck} />
+      <Officialmerchandise heading={om.heading} om={om.om} />
+      <Latestcollection heading={sbpk.heading} ls={sbpk.sbpk} />
+      <CategoriesK heading={Catek.heading} Catek={Catek.Catek} />
+      <Newarivals heading={tsk.heading} productsa={tsk.tsk} />
+      <Newarivals heading={nak.heading} productsa={nak.nak} />
+      <Membership />
+    </div>
   );
 }
 
-export default Kids
+export default Kids;
