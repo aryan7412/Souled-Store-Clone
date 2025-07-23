@@ -9,6 +9,9 @@ const UserProfile = () => {
     name: '',
     email: '',
     phone: '',
+
+
+    
     gender: ''
   });
   const navigate = useNavigate();
