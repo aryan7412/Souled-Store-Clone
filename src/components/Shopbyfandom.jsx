@@ -34,13 +34,13 @@ function Shopbyfandom({heading,sbfm}) {
     <h3 className='text-center font-extrabold text-2xl pb-6 pt-6'>{heading}</h3>
       <div className="slider-container">
       <Slider {...settings}>
-        {sbfm.map((sb)=>(
-          <div>
-            <div className='px-2'>
-              <img src={sb.image} />    
-            </div>
-            </div>
-            ))}
+        {sbfm.map((sb, index) => (
+          <div key={`fandom-${index}`} className="product-card">
+            <img src={sb.image} alt={sb.name} />
+            <h3>{sb.name}</h3>
+            <p>₹{sb.price}</p>
+          </div>
+        ))}
       </Slider>
       </div>
     </div>
